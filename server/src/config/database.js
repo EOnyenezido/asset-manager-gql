@@ -1,4 +1,5 @@
 import SQL from 'sequelize';
+require('dotenv').config();
 
 const database = new SQL(process.env.DB, process.env.DB_USER, process.env.DB_PASSWORD, {
   dialect: 'mysql',
