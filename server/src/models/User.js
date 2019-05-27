@@ -91,7 +91,7 @@ const User = database.define('user', {
   },
 }, {
   defaultScope: {
-    attributes: { exclude: ['password', 'isSuperAdmin'] },
+    attributes: { exclude: ['isSuperAdmin'] },
   }
 })
 

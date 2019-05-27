@@ -14,12 +14,18 @@ const root = {
     login: async (_, { emailAddress, password }, { dataSources }) => {
       const user = await dataSources.userAPI.findUser({ emailAddress });
       if (user) {
-        const token = jwt.sign(user.dataValues, process.env.SECRET, {
-          expiresIn: process.env.EXPIRATION,
-        })
-        user.token = token;
+        const match = await bcrypt.compare(password, user.password);
+        if (match) { // passwords match, create token
+          const token = jwt.sign(user.dataValues, process.env.SECRET, {
+            expiresIn: process.env.EXPIRATION,
+          })
+          user.token = token;
+          return user;
+        } else {
+          return null; // passwords don't match
+        }        
       }
-      return user;
+      return null; // user does not exist
     },
     register: async (_, details, { dataSources }) => {
       const hashedPassword = await bcrypt.hash(details.password, 10);
