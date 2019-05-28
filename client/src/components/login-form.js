@@ -45,13 +45,13 @@ class LoginForm extends PureComponent {
 	}
 
 	handleSubmit(login, event)	{
-		if (event) event.preventDefault();
+		event && event.preventDefault();
 		this.setState({error: false, disabled: true});
 		login({ variables: {emailAddress: this.state.emailAddress, password: this.state.password} });		
   }
 
   switchForm(event) {
-		event.preventDefault();
+		event && event.preventDefault();
 		this.props.switchForm('forgot'); // this state is lifted and managed by the parent login page
 	}
   

@@ -51,7 +51,7 @@ class SignUpForm extends PureComponent {
 	}
 
 	handleSubmit(register, event)	{
-		if (event) event.preventDefault();
+		event && event.preventDefault();
 		this.setState({error: false, disabled: true});
     register({ variables: {
       emailAddress: this.state.emailAddress,
@@ -63,7 +63,7 @@ class SignUpForm extends PureComponent {
   }
 
   switchForm(event) {
-		event.preventDefault();
+		event && event.preventDefault();
 		this.props.switchForm('signin'); // this state is lifted and managed by the parent login page
 	}
 

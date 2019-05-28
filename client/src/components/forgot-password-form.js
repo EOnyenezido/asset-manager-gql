@@ -20,7 +20,7 @@ class ForgotPasswordForm extends PureComponent {
 
 	// Private functions
   switchForm(event) {
-		event.preventDefault();
+		event && event.preventDefault();
 		this.props.switchForm('signin'); // this state is lifted and managed by the parent login page
 	}
 
