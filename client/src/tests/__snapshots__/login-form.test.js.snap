@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot testing matches the snapshot 1`] = `
+<div
+  className="kt-login__signin undefined"
+>
+  <div
+    className="kt-login__head"
+  >
+    <h3
+      className="kt-login__title"
+    >
+      Sign In To Asset Manager
+    </h3>
+  </div>
+  <form
+    action=""
+    className="kt-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="kt-alert kt-alert--outline alert alert-danger alert-dismissible animated fadeIn"
+      hidden={true}
+      role="alert"
+    >
+      <button
+        aria-label="Close"
+        className="close"
+        data-dismiss="alert"
+        type="button"
+      />
+      <span>
+        
+      </span>
+    </div>
+    <div
+      className="input-group"
+    >
+      <input
+        autoComplete="off"
+        className="form-control"
+        name="emailAddress"
+        onChange={[Function]}
+        placeholder="Email"
+        type="text"
+      />
+    </div>
+    <div
+      className="input-group"
+    >
+      <input
+        className="form-control"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+      />
+    </div>
+    <div
+      className="row kt-login__extra"
+    >
+      <div
+        className="col"
+      >
+        <label
+          className="kt-checkbox"
+        >
+          <input
+            name="remember"
+            type="checkbox"
+          />
+           Remember me
+          <span />
+        </label>
+      </div>
+      <div
+        className="col kt-align-right"
+      >
+        <a
+          className="kt-login__link"
+          href="/"
+          id="kt_login_forgot"
+          onClick={[Function]}
+        >
+          Forgot Password ?
+        </a>
+      </div>
+    </div>
+    <div
+      className="kt-login__actions"
+    >
+      <button
+        className="btn btn-brand btn-elevate kt-login__btn-primary kt-spinner "
+        disabled={false}
+        id="kt_login_signin_submit"
+      >
+        Log In
+      </button>
+    </div>
+  </form>
+</div>
+`;
