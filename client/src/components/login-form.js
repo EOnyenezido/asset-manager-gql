@@ -117,7 +117,7 @@ class LoginForm extends PureComponent {
                     </div>
                   </div>
                   <div className="kt-login__actions">
-                    <button id="kt_login_signin_submit" className={`btn btn-brand btn-elevate kt-login__btn-primary kt-spinner ${this.state.disabled ? "kt-spinner--right kt-spinner--sm kt-spinner--light" : ""}`} disabled={this.state.disabled}>{this.state.disabled ? "Signing In... " : "Log In"}</button>
+                    <button id="kt_login_signin_submit" className={`btn btn-brand btn-elevate kt-login__btn-primary ${this.state.disabled ? "kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light" : ""}`} disabled={this.state.disabled}>{this.state.disabled ? "Signing In... " : "Log In"}</button>
                   </div>
                 </form>
               </div>

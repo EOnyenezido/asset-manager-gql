@@ -53,8 +53,6 @@ class Login extends Component {
   }
 
   render() {
-		console.log('parent login rendering');
-		
 		const { signin, signup, forgot } = this.state;
 		return (
 			<div className="div-body kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">

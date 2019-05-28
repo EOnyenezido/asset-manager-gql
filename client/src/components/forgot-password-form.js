@@ -26,8 +26,6 @@ class ForgotPasswordForm extends PureComponent {
 
   // Lifecycle methods
   render() {
-		console.log('forgot form rendering');
-		
 		return (
       <div className={`kt-login__forgot ${this.props.forgot}`}>
         <div className="kt-login__head">

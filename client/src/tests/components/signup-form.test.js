@@ -1,6 +1,6 @@
 import React from 'react';
 import { create } from "react-test-renderer";
-import LoginForm, { LOGIN_USER } from '../components/login-form';
+import SignUpForm, { REGISTER_USER } from '../../components/signup-form';
 import { MockedProvider } from 'react-apollo/test-utils';
 import wait from 'waait';
 
@@ -8,7 +8,7 @@ import wait from 'waait';
 it('given no props, renders without crashing', () => {
   create(
     <MockedProvider mocks={[]}>
-      <LoginForm />
+      <SignUpForm />
     </MockedProvider>);
 });
 
@@ -17,29 +17,35 @@ describe('Snapshot testing', () => {
   it('matches the snapshot', () => {
     const component = create(
       <MockedProvider mocks={[]}>
-      <LoginForm />
+      <SignUpForm />
     </MockedProvider>);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });
 
-// login function
-describe('Login function', () => {
+// registration function
+describe('Registration function', () => {
   // success
-  it('logs in a user with accurate details', async () => {
-    const response = { emailAddress: 'foo@bar.com', firstName: 'Foo', lastName: 'Bar', id: 1, token: 'thisisasupersecurehash' }; // mock server says user is accurate
+  it('registers a user with accurate details', async () => {
+    const response = { emailAddress: 'foo@bar.com', firstName: 'Foo', lastName: 'Bar', id: 1, token: 'thisisasupersecurehash' };
     const mocks = [
       {
         request: {
-          query: LOGIN_USER,
-          variables: { emailAddress: '', password: '' },
+          query: REGISTER_USER,
+          variables: {
+            emailAddress: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            phoneNumber: ''
+          },
         },
-        result: { data: { login: response } },
+        result: { data: { register: response } },
       },
     ];
     const component = create(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <LoginForm />
+        <SignUpForm />
       </MockedProvider>);
     const submitForm = component.root.findByType('form');
     submitForm.props.onSubmit();
@@ -51,19 +57,25 @@ describe('Login function', () => {
   });
 
   // error
-  it('displays an error for a user with invalid details', async () => {
+  it('displays an error for a registration with invalid details', async () => {
     const mocks = [
       {
         request: {
-          query: LOGIN_USER,
-          variables: { emailAddress: '', password: '' },
+          query: REGISTER_USER,
+          variables: {
+            emailAddress: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            phoneNumber: ''
+          },
         },
-        result: { errors: [{ message: "Invalid username or password!" }] }, // server says user is invalid
+        result: { errors: [{ message: 'Field "password" must contain at least 10 characters!' }] }, // server says registration is invalid
       },
     ];
     const component = create(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <LoginForm />
+        <SignUpForm />
       </MockedProvider>);
     const submitForm = component.root.findByType('form');
     submitForm.props.onSubmit();
@@ -72,22 +84,28 @@ describe('Login function', () => {
     
     // alert message is shown and contains the message from the error thrown
     expect(alert.props.hidden).toBeFalsy();
-    expect(alert.children[1].children).toContain('Invalid username or password!');
+    expect(alert.children[1].children).toContain('Field "password" must contain at least 10 characters!');
   });
 
   it('displays an error when connectivity cound not be established', async () => {
     const mocks = [
       {
         request: {
-          query: LOGIN_USER,
-          variables: { emailAddress: '', password: '' },
+          query: REGISTER_USER,
+          variables: {
+            emailAddress: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            phoneNumber: ''
+          },
         },
         error: new Error('Uh oh, cannot seem to connect to server'), // no connection
       },
     ];
     const component = create(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <LoginForm />
+        <SignUpForm />
       </MockedProvider>);
     const submitForm = component.root.findByType('form');
     submitForm.props.onSubmit();
