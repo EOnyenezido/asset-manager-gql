@@ -8,7 +8,7 @@ import '../assets/css/login.css';
 import '../assets/css/style.bundle.css';
 import 'animate.css';
 
-const LOGIN_USER = gql`
+export const LOGIN_USER = gql`
   mutation login($emailAddress: String!, $password: String!) {
     login(emailAddress: $emailAddress, password: $password)	{
 			id
@@ -33,6 +33,7 @@ class LoginForm extends PureComponent {
 		}
     this.handleChange = this.handleChange.bind(this);
     this.switchForm = this.switchForm.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 	// Private functions
@@ -44,7 +45,7 @@ class LoginForm extends PureComponent {
 	}
 
 	handleSubmit(login, event)	{
-		event.preventDefault();
+		if (event) event.preventDefault();
 		this.setState({error: false, disabled: true});
 		login({ variables: {emailAddress: this.state.emailAddress, password: this.state.password} });		
   }
@@ -56,7 +57,6 @@ class LoginForm extends PureComponent {
   
   // Lifecycle methods
   render() {
-		console.log('login form rendering');
 		return (
 			<ApolloConsumer>
 				{client => (
@@ -68,7 +68,7 @@ class LoginForm extends PureComponent {
 							setTimeout(() => {
 								// can use setState here as it is a callback function
 								if (login === null) { // username or password is incorrect
-									this.setState({ error: true, disabled: false, errorMessage: "Incorrect username or password. Please try again." });
+									this.setState({ error: true, disabled: false, errorMessage: 'Incorrect username or password. Please try again.' });
 								} else {
 									this.setState({ error: false, disabled: false });
 									// Save token and user details to local storage
@@ -80,8 +80,12 @@ class LoginForm extends PureComponent {
 						}}
 						onError={({ graphQLErrors, networkError, operation, response }) => {
 							if (networkError) {
-								this.setState({ error: true, disabled: false, errorMessage: "Unable to connect. Please check your connection and try again." });
-							}
+								this.setState({ error: true, disabled: false, errorMessage: 'Unable to connect. Please check your connection and try again.' });
+							} else if (graphQLErrors)  {
+                this.setState({ error: true, disabled: false, errorMessage: graphQLErrors[0].message });
+              } else { // unknown error
+                this.setState({ error: true, disabled: false, errorMessage: 'An unknown error has occured, please contact administrator' });
+              }
 						}}
 					>
 						{(login) => {
