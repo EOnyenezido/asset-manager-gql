@@ -1,0 +1,368 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot testing matches the snapshot 1`] = `
+<div
+  className="div-body kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading"
+>
+  <div
+    className="kt-grid kt-grid--ver kt-grid--root"
+  >
+    <div
+      className="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v3 kt-login--signin"
+      id="kt_login"
+    >
+      <div
+        className="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor"
+        style={
+          Object {
+            "backgroundImage": "url(bg-login.jpg)",
+          }
+        }
+      >
+        <div
+          className="kt-grid__item kt-grid__item--fluid kt-login__wrapper"
+        >
+          <div
+            className="kt-login__container"
+          >
+            <div
+              className="kt-login__logo"
+            >
+              <a
+                href="#/"
+              >
+                <img
+                  alt="logo"
+                  src="logo-main.png"
+                  style={
+                    Object {
+                      "width": "20%",
+                    }
+                  }
+                />
+              </a>
+            </div>
+            <div
+              className="kt-login__signin "
+            >
+              <div
+                className="kt-login__head"
+              >
+                <h3
+                  className="kt-login__title"
+                >
+                  Sign In To Asset Manager
+                </h3>
+              </div>
+              <form
+                action=""
+                className="kt-form"
+                onSubmit={[Function]}
+              >
+                <div
+                  className="kt-alert kt-alert--outline alert alert-danger alert-dismissible animated fadeIn"
+                  hidden={true}
+                  role="alert"
+                >
+                  <button
+                    aria-label="Close"
+                    className="close"
+                    data-dismiss="alert"
+                    type="button"
+                  />
+                  <span>
+                    
+                  </span>
+                </div>
+                <div
+                  className="input-group"
+                >
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    name="emailAddress"
+                    onChange={[Function]}
+                    placeholder="Email"
+                    type="text"
+                  />
+                </div>
+                <div
+                  className="input-group"
+                >
+                  <input
+                    className="form-control"
+                    name="password"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    type="password"
+                  />
+                </div>
+                <div
+                  className="row kt-login__extra"
+                >
+                  <div
+                    className="col"
+                  >
+                    <label
+                      className="kt-checkbox"
+                    >
+                      <input
+                        name="remember"
+                        type="checkbox"
+                      />
+                       Remember me
+                      <span />
+                    </label>
+                  </div>
+                  <div
+                    className="col kt-align-right"
+                  >
+                    <a
+                      className="kt-login__link"
+                      href="/"
+                      id="kt_login_forgot"
+                      onClick={[Function]}
+                    >
+                      Forgot Password ?
+                    </a>
+                  </div>
+                </div>
+                <div
+                  className="kt-login__actions"
+                >
+                  <button
+                    className="btn btn-brand btn-elevate kt-login__btn-primary "
+                    disabled={false}
+                    id="kt_login_signin_submit"
+                  >
+                    Log In
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              className="kt-login__signup "
+            >
+              <div
+                className="kt-login__head"
+              >
+                <h3
+                  className="kt-login__title"
+                >
+                  Request Access
+                </h3>
+                <div
+                  className="kt-login__desc"
+                >
+                  Enter your details to request access:
+                </div>
+              </div>
+              <form
+                action=""
+                className="kt-form"
+                onSubmit={[Function]}
+              >
+                <div
+                  className="kt-alert kt-alert--outline alert alert-danger alert-dismissible animated fadeIn"
+                  hidden={true}
+                  role="alert"
+                >
+                  <button
+                    aria-label="Close"
+                    className="close"
+                    data-dismiss="alert"
+                    type="button"
+                  />
+                  <span>
+                    
+                  </span>
+                </div>
+                <div
+                  className="input-group row"
+                >
+                  <input
+                    className="form-control mr-2"
+                    name="firstName"
+                    onChange={[Function]}
+                    placeholder="First Name"
+                    type="text"
+                  />
+                  <input
+                    className="form-control ml-2"
+                    name="lastName"
+                    onChange={[Function]}
+                    placeholder="Last Name"
+                    type="text"
+                  />
+                </div>
+                <div
+                  className="input-group"
+                >
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    name="emailAddress"
+                    onChange={[Function]}
+                    placeholder="Email"
+                    type="text"
+                  />
+                </div>
+                <div
+                  className="input-group"
+                >
+                  <input
+                    className="form-control"
+                    name="phoneNumber"
+                    onChange={[Function]}
+                    placeholder="Phone Number"
+                    type="text"
+                  />
+                </div>
+                <div
+                  className="input-group"
+                >
+                  <input
+                    className="form-control mr-2"
+                    name="password"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    type="password"
+                  />
+                  <input
+                    className="form-control ml-2"
+                    name="rpassword"
+                    onChange={[Function]}
+                    placeholder="Confirm Password"
+                    type="password"
+                  />
+                </div>
+                <div
+                  className="row kt-login__extra"
+                >
+                  <div
+                    className="col kt-align-left"
+                  >
+                    <label
+                      className="kt-checkbox"
+                    >
+                      <input
+                        name="agree"
+                        type="checkbox"
+                      />
+                      I Agree the 
+                      <a
+                        className="kt-link kt-login__link kt-font-bold"
+                        href="/"
+                      >
+                        terms and conditions
+                      </a>
+                      .
+                      <span />
+                    </label>
+                    <span
+                      className="form-text text-muted"
+                    />
+                  </div>
+                </div>
+                <div
+                  className="kt-login__actions"
+                >
+                  <button
+                    className="btn btn-brand btn-elevate kt-login__btn-primary "
+                    disabled={false}
+                    id="kt_login_signup_submit"
+                  >
+                    Request
+                  </button>
+                   
+                   
+                  <button
+                    className="btn btn-light btn-elevate kt-login__btn-secondary"
+                    id="kt_login_signup_cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              className="kt-login__forgot "
+            >
+              <div
+                className="kt-login__head"
+              >
+                <h3
+                  className="kt-login__title"
+                >
+                  Forgotten Password ?
+                </h3>
+                <div
+                  className="kt-login__desc"
+                >
+                  Enter your email to reset your password:
+                </div>
+              </div>
+              <form
+                action=""
+                className="kt-form"
+              >
+                <div
+                  className="input-group"
+                >
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="kt_email"
+                    name="email"
+                    placeholder="Email"
+                    type="text"
+                  />
+                </div>
+                <div
+                  className="kt-login__actions"
+                >
+                  <button
+                    className="btn btn-brand btn-elevate kt-login__btn-primary"
+                    id="kt_login_forgot_submit"
+                  >
+                    Request
+                  </button>
+                   
+                   
+                  <button
+                    className="btn btn-light btn-elevate kt-login__btn-secondary"
+                    id="kt_login_forgot_cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              className="kt-login__account"
+            >
+              <span
+                className="kt-login__account-msg"
+              >
+                Don't have an account ?
+              </span>
+               
+               
+              <a
+                className="kt-login__account-link"
+                href="/"
+                id="kt_login_signup"
+                onClick={[Function]}
+              >
+                Request Access.
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
