@@ -30,7 +30,7 @@ const root = {
     register: async (_, details, { dataSources }) => {
       const hashedPassword = await bcrypt.hash(details.password, 10);
       const user = await dataSources.userAPI.createNewUser({...details, password: hashedPassword});
-      if (user) {
+      if (user && user.dataValues) {
         delete user.dataValues.password; // remove password here is necessary because create returns the full object while find follows the defined scope in the model that excludes sensitive fields
         const token = jwt.sign(user.dataValues, process.env.SECRET, {
           expiresIn: process.env.EXPIRATION,

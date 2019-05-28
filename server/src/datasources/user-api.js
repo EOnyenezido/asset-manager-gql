@@ -18,11 +18,13 @@ class UserAPI extends DataSource {
   }
 
   async createNewUser(details) {
-    const user = await this.store.create(details, {
-      fields: ['emailAddress', 'password', 'firstName', 'lastName', 'phoneNumber']
-    })
-
-    return user ? user : null;
+      const user = await this.store.create(details, {
+        fields: ['emailAddress', 'password', 'firstName', 'lastName', 'phoneNumber']
+      }).catch({name: 'SequelizeUniqueConstraintError'}, (err) => {        
+        return new Error(`A user with that ${err.errors[0].path.split(/(?=[A-Z])/).join(' ').toLowerCase()} already exists!`);
+      })
+  
+      return user ? user : null;
   }
 }
 
